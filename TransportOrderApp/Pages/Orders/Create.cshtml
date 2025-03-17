@@ -1,4 +1,41 @@
 ﻿@page
 @model TransportOrderApp.Pages.Orders.CreateModel
 @{
+    ViewData["Title"] = "Создание заказа";
 }
+
+<h2>Создание нового заказа</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Order.SenderCity">Город отправителя</label>
+        <input asp-for="Order.SenderCity" class="form-control" />
+        <span asp-validation-for="Order.SenderCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Order.SenderAddress">Адрес отправителя</label>
+        <input asp-for="Order.SenderAddress" class="form-control" />
+        <span asp-validation-for="Order.SenderAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Order.ReceiverCity">Город получателя</label>
+        <input asp-for="Order.ReceiverCity" class="form-control" />
+        <span asp-validation-for="Order.ReceiverCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Order.ReceiverAddress">Адрес получателя</label>
+        <input asp-for="Order.ReceiverAddress" class="form-control" />
+        <span asp-validation-for="Order.ReceiverAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Order.Weight">Вес груза (кг)</label>
+        <input asp-for="Order.Weight" class="form-control" />
+        <span asp-validation-for="Order.Weight" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Order.PickupDate">Дата забора груза</label>
+        <input asp-for="Order.PickupDate" class="form-control" />
+        <span asp-validation-for="Order.PickupDate" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Создать</button>
+</form>
