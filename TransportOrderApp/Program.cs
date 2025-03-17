@@ -1,6 +1,6 @@
+using TransportOrderApp.Models;
 using TransportOrderApp.Services;
 using Microsoft.EntityFrameworkCore;
-using TransportOrderApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

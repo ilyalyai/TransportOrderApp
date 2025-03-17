@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace TransportOrderApp.Models
@@ -33,5 +33,14 @@ namespace TransportOrderApp.Models
 
         [StringLength(500, ErrorMessage = "Описание не может превышать 500 символов.")]
         public string Description { get; set; } // Опциональное поле
+    }
+
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
+
+        public DbSet<Order> Orders { get; set; } // Таблица заказов
     }
 }
