@@ -15,6 +15,11 @@ namespace TransportOrderApp.Services
 
         public void AddOrder(Order order)
         {
+            if (order == null)
+            {
+                throw new ArgumentNullException(nameof(order), "Заказ не может быть null.");
+            }
+
             _context.Orders.Add(order);
             _context.SaveChanges();
         }
