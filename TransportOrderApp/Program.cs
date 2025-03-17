@@ -1,7 +1,12 @@
 using TransportOrderApp.Services;
+using Microsoft.EntityFrameworkCore;
 using TransportOrderApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Регистрация контекста базы данных
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Регистрация сервиса
 builder.Services.AddScoped<IOrderService, OrderService>();
