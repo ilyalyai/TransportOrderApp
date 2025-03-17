@@ -1,0 +1,36 @@
+﻿@model TransportOrderApp.Models.Order
+
+@{
+    ViewData["Title"] = "Детали заказа";
+}
+
+<h2>Детали заказа</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">ID заказа</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+
+        <dt class="col-sm-2">Город отправителя</dt>
+        <dd class="col-sm-10">@Model.SenderCity</dd>
+
+        <dt class="col-sm-2">Адрес отправителя</dt>
+        <dd class="col-sm-10">@Model.SenderAddress</dd>
+
+        <dt class="col-sm-2">Город получателя</dt>
+        <dd class="col-sm-10">@Model.ReceiverCity</dd>
+
+        <dt class="col-sm-2">Адрес получателя</dt>
+        <dd class="col-sm-10">@Model.ReceiverAddress</dd>
+
+        <dt class="col-sm-2">Вес груза (кг)</dt>
+        <dd class="col-sm-10">@Model.Weight</dd>
+
+        <dt class="col-sm-2">Дата забора груза</dt>
+        <dd class="col-sm-10">@Model.PickupDate.ToShortDateString()</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Вернуться к списку</a>
+</div>

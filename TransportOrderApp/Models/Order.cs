@@ -30,9 +30,6 @@ namespace TransportOrderApp.Models
         [Required(ErrorMessage = "Дата забора груза обязательна.")]
         [DataType(DataType.Date, ErrorMessage = "Некорректный формат даты.")]
         public DateTime PickupDate { get; set; }
-
-        [StringLength(500, ErrorMessage = "Описание не может превышать 500 символов.")]
-        public string Description { get; set; } // Опциональное поле
     }
 
     public class AppDbContext : DbContext
